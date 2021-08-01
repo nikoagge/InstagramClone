@@ -1,1 +1,1 @@
-GoogleService-Info.plist
+**/Users/nikolas/Desktop/Programming/Swift/iOSAcademy/InstagramClone/InstagramClone/GoogleService-Info.plist
