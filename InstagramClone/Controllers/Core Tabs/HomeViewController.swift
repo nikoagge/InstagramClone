@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class HomeViewController: UIViewController {
+class HomeViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigate(.init(pageType: .login, navigationStyle: .present(animated: true)))
+    }
+}
+
+private extension HomeViewController {
+    func handleNotAuthenticated() {
+        if Auth.auth().currentUser == nil {
+            
+        }
     }
 }
