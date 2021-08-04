@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol Coordinator where Self: UIViewController {
     func navigate(_ navigationItem: NavigationItem)
@@ -25,8 +26,14 @@ extension Coordinator {
         case .viewControllers(let viewControllers):
             controllersForInitialNavigation = viewControllers
             
-        case .login:
+        case .loginViewController:
             controllerToNavigate = StoryboardType.login.getController(LoginViewController.self)
+            
+        case .safariServicesSafariViewController(let url):
+            controllerToNavigate = SFSafariViewController(url: url)
+            
+        case .registrationViewController:
+            controllerToNavigate = StoryboardType.registration.getController(RegistrationViewController.self)
         }
         
         if let controllerToNavigate = controllerToNavigate {
@@ -57,7 +64,7 @@ extension Coordinator {
                 
             case .setInitialNavigationController(let animated):
                 Constants.appDelegate.initialNavigationController.setViewControllers(controllersForInitialNavigation, animated: animated)
-        }
+            }
         }
     }
 }

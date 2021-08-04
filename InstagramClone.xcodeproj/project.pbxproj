@@ -44,6 +44,8 @@
 		17371D7226B70966008411C5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17371D7126B70966008411C5 /* DatabaseManager.swift */; };
 		17371D7426B70B53008411C5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17371D7326B70B53008411C5 /* AuthManager.swift */; };
 		17371D7626B70BB4008411C5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17371D7526B70BB4008411C5 /* StorageManager.swift */; };
+		173B099A26BA6E96002675A3 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173B099926BA6E96002675A3 /* Registration.storyboard */; };
+		174EE24A26B7C1FA00BC9712 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */; };
 		17B1A84D26B715FC00F2CCEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17B1A84C26B715FC00F2CCEA /* GoogleService-Info.plist */; };
 		45E3367E7CDDF47FB7C42FD5 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3955F0215555F2DC1637D137 /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		17371D7126B70966008411C5 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		17371D7326B70B53008411C5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		17371D7526B70BB4008411C5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		173B099926BA6E96002675A3 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		17B1A84C26B715FC00F2CCEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FF50470C1753E61639BDBDA /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		3955F0215555F2DC1637D137 /* Pods_InstagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +160,7 @@
 				170657E826B6DB98006BEB54 /* Notifications.storyboard */,
 				170657EA26B6DBA2006BEB54 /* Profile.storyboard */,
 				17371D6A26B6F63C008411C5 /* Login.storyboard */,
+				173B099926BA6E96002675A3 /* Registration.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				1714CCCC26B6D6BA0061C01D /* Resources */,
 				17371D5C26B6EE7E008411C5 /* Managers */,
 				17371D5F26B6EEF0008411C5 /* Enums */,
+				174EE24826B7C0FF00BC9712 /* Extensions */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -256,6 +262,14 @@
 				170657E026B6DB5F006BEB54 /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		174EE24826B7C0FF00BC9712 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E62E1227D75205EAAEC8B863 /* Pods */ = {
@@ -337,6 +351,7 @@
 			files = (
 				1714CCC526B6D5630061C01D /* LaunchScreen.storyboard in Resources */,
 				170657E726B6DB8C006BEB54 /* Camera.storyboard in Resources */,
+				173B099A26BA6E96002675A3 /* Registration.storyboard in Resources */,
 				170657EB26B6DBA2006BEB54 /* Profile.storyboard in Resources */,
 				1714CCC226B6D5630061C01D /* Assets.xcassets in Resources */,
 				170657E526B6DB83006BEB54 /* Explore.storyboard in Resources */,
@@ -421,6 +436,7 @@
 				170657CE26B6DA75006BEB54 /* ProfileViewController.swift in Sources */,
 				17371D6D26B6F6EF008411C5 /* GenericViewController.swift in Sources */,
 				170657D426B6DAD6006BEB54 /* EditProfileViewController.swift in Sources */,
+				174EE24A26B7C1FA00BC9712 /* UIViewExtension.swift in Sources */,
 				17371D6326B6F0FE008411C5 /* MainTabType.swift in Sources */,
 				17371D6726B6F1F3008411C5 /* PageType.swift in Sources */,
 				17371D6926B6F2C2008411C5 /* NavigationStyle.swift in Sources */,

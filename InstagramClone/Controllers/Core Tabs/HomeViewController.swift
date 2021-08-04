@@ -19,7 +19,7 @@ class HomeViewController: GenericViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        navigate(.init(pageType: .login, navigationStyle: .present(animated: true)))
+        navigate(.init(pageType: .loginViewController, navigationStyle: .present(animated: true)))
     }
 }
 

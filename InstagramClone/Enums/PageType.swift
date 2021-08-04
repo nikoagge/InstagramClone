@@ -12,5 +12,7 @@ import UIKit
 enum PageType {
     case viewControllers(viewControllers: [UIViewController])
     case viewController(viewController: UIViewController)
-    case login
+    case loginViewController
+    case safariServicesSafariViewController(url: URL)
+    case registrationViewController
 }

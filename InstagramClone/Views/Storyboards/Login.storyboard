@@ -4,35 +4,133 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-Xn-eEO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="neg-Ei-V8r">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="DGj-aO-BdU"/>
+                                    <constraint firstAttribute="height" constant="200" id="Lsy-xT-1Ue"/>
                                 </constraints>
-                            </view>
+                                <imageReference key="image" image="instagram_gradient"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iro-yy-4HK">
+                                <rect key="frame" x="103.5" y="60" width="207" height="80"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="146-Jw-GTB">
+                                <rect key="frame" x="31" y="240" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Pic-fW-qUp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f61-eg-tja">
+                                <rect key="frame" x="31" y="329" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl8-Fk-trk">
+                                <rect key="frame" x="31" y="418" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log In">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mI9-SY-5sk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-jk-YVd">
+                                <rect key="frame" x="31" y="507" width="352" height="49"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New user? Create an account">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newUserCreateAnAccountButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XUq-h1-gq6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDa-Tj-6ck">
+                                <rect key="frame" x="31" y="713" width="352" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="R9U-nw-in5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Terms of Service">
+                                    <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="termsOfServiceButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y8R-Jd-hEm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-Xl-fOh">
+                                <rect key="frame" x="31" y="782" width="352" height="49"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Privacy">
+                                    <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="privacyButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Lu8-kh-a30"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mHa-Xn-eEO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8k1-m8-Tku"/>
-                            <constraint firstItem="mHa-Xn-eEO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="CRg-c5-jtS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mHa-Xn-eEO" secondAttribute="trailing" id="jZ7-7v-5Es"/>
+                            <constraint firstItem="Jl8-Fk-trk" firstAttribute="leading" secondItem="f61-eg-tja" secondAttribute="leading" id="3LF-91-yTn"/>
+                            <constraint firstItem="oaR-jk-YVd" firstAttribute="trailing" secondItem="Jl8-Fk-trk" secondAttribute="trailing" id="3Ut-8w-12b"/>
+                            <constraint firstItem="Jl8-Fk-trk" firstAttribute="height" secondItem="f61-eg-tja" secondAttribute="height" id="8kp-85-ota"/>
+                            <constraint firstItem="VRG-Xl-fOh" firstAttribute="leading" secondItem="HDa-Tj-6ck" secondAttribute="leading" id="AYa-gq-ABc"/>
+                            <constraint firstItem="f61-eg-tja" firstAttribute="trailing" secondItem="146-Jw-GTB" secondAttribute="trailing" id="EPt-hs-PQw"/>
+                            <constraint firstItem="f61-eg-tja" firstAttribute="height" secondItem="146-Jw-GTB" secondAttribute="height" id="FFt-Ed-48A"/>
+                            <constraint firstItem="Iro-yy-4HK" firstAttribute="width" secondItem="neg-Ei-V8r" secondAttribute="width" multiplier="0.5" id="PS9-KV-cAu"/>
+                            <constraint firstItem="f61-eg-tja" firstAttribute="leading" secondItem="146-Jw-GTB" secondAttribute="leading" id="TRK-eg-8qz"/>
+                            <constraint firstItem="VRG-Xl-fOh" firstAttribute="top" secondItem="HDa-Tj-6ck" secondAttribute="bottom" constant="20" id="TWd-E5-cjn"/>
+                            <constraint firstItem="neg-Ei-V8r" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="UYY-tE-xpt"/>
+                            <constraint firstItem="146-Jw-GTB" firstAttribute="top" secondItem="neg-Ei-V8r" secondAttribute="bottom" constant="40" id="Wlw-7n-N7m"/>
+                            <constraint firstItem="Jl8-Fk-trk" firstAttribute="trailing" secondItem="f61-eg-tja" secondAttribute="trailing" id="YdI-u5-eHb"/>
+                            <constraint firstItem="oaR-jk-YVd" firstAttribute="leading" secondItem="Jl8-Fk-trk" secondAttribute="leading" id="b9e-pI-zqV"/>
+                            <constraint firstItem="Jl8-Fk-trk" firstAttribute="top" secondItem="f61-eg-tja" secondAttribute="bottom" constant="40" id="bjz-gr-o1r"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HDa-Tj-6ck" secondAttribute="trailing" constant="31" id="bmc-ZU-vwx"/>
+                            <constraint firstItem="oaR-jk-YVd" firstAttribute="top" secondItem="Jl8-Fk-trk" secondAttribute="bottom" constant="40" id="cpa-o2-QqO"/>
+                            <constraint firstItem="neg-Ei-V8r" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fRd-NJ-QJh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="146-Jw-GTB" secondAttribute="trailing" constant="31" id="h5o-xP-hB1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="neg-Ei-V8r" secondAttribute="trailing" id="iIb-Wd-yaT"/>
+                            <constraint firstItem="f61-eg-tja" firstAttribute="top" secondItem="146-Jw-GTB" secondAttribute="bottom" constant="40" id="ixb-Sq-L43"/>
+                            <constraint firstItem="Iro-yy-4HK" firstAttribute="height" secondItem="neg-Ei-V8r" secondAttribute="height" multiplier="0.4" id="jCl-Us-Gdr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VRG-Xl-fOh" secondAttribute="bottom" constant="31" id="khX-jf-IcJ"/>
+                            <constraint firstItem="146-Jw-GTB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="nGE-x7-jLV"/>
+                            <constraint firstItem="Iro-yy-4HK" firstAttribute="centerY" secondItem="neg-Ei-V8r" secondAttribute="centerY" id="pgl-p3-h1b"/>
+                            <constraint firstItem="Iro-yy-4HK" firstAttribute="centerX" secondItem="neg-Ei-V8r" secondAttribute="centerX" id="qTz-qv-V0M"/>
+                            <constraint firstItem="HDa-Tj-6ck" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="qgg-65-hnp"/>
+                            <constraint firstItem="VRG-Xl-fOh" firstAttribute="height" secondItem="HDa-Tj-6ck" secondAttribute="height" id="sJb-qY-AkP"/>
+                            <constraint firstItem="HDa-Tj-6ck" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oaR-jk-YVd" secondAttribute="bottom" constant="20" id="tN2-QC-3pA"/>
+                            <constraint firstItem="VRG-Xl-fOh" firstAttribute="trailing" secondItem="HDa-Tj-6ck" secondAttribute="trailing" id="tbS-bU-sDL"/>
+                            <constraint firstItem="oaR-jk-YVd" firstAttribute="height" secondItem="Jl8-Fk-trk" secondAttribute="height" id="ygH-Oc-wwX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Jl8-Fk-trk" id="Dm7-SH-y8G"/>
+                        <outlet property="passwordTextField" destination="f61-eg-tja" id="fj1-7I-1Cc"/>
+                        <outlet property="usernameOrEmailTextField" destination="146-Jw-GTB" id="Ljd-bF-G1K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,8 +138,21 @@
         </scene>
     </scenes>
     <resources>
+        <image name="instagram_gradient" width="1024" height="576"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
