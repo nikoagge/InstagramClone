@@ -14,4 +14,11 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
+    
+    static func newAutoLayoutView() -> Self {
+        let view: UIView = Self()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view as! Self
+    }
 }

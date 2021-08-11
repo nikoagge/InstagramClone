@@ -19,14 +19,14 @@ class HomeViewController: GenericViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        navigate(.init(pageType: .loginViewController, navigationStyle: .present(animated: true)))
+        handleNotAuthenticated()
     }
 }
 
 private extension HomeViewController {
     func handleNotAuthenticated() {
         if Auth.auth().currentUser == nil {
-            
+            navigate(.init(pageType: .loginViewController, navigationStyle: .present(modalPresentationStyle: .overFullScreen, animated: true)))
         }
     }
 }

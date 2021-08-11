@@ -42,8 +42,8 @@ extension Coordinator {
     
         DispatchQueue.main.async {
             switch navigationItem.navigationStyle {
-            case .present(let animated):
-                controllerToNavigate.modalPresentationStyle = .overFullScreen
+            case .present(let modalPresentationStyle, let animated):
+                controllerToNavigate.modalPresentationStyle = modalPresentationStyle
                 self.present(controllerToNavigate, animated: animated)
                 
             case .presentWithinNavigation(let animated, let hidesBottomBar):

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 enum NavigationStyle {
-    case present(animated: Bool)
+    case present(modalPresentationStyle: UIModalPresentationStyle, animated: Bool)
     case presentWithinNavigation(animated: Bool, hidesBottomBar: Bool)
     case push(animated: Bool)
     case replace(animated: Bool)

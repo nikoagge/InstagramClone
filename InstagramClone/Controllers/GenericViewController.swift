@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericViewController: UIViewController, Coordinator {
+class GenericViewController: UIViewController, Coordinator, AlertPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
 

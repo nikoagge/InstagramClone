@@ -16,9 +16,64 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWR-f6-FTq">
+                                <rect key="frame" x="31" y="84" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="9gv-c9-8gl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXS-ze-KiN">
+                                <rect key="frame" x="31" y="173" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0HI-a4-pXE">
+                                <rect key="frame" x="31" y="262" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yv-zF-hnl">
+                                <rect key="frame" x="31" y="351" width="352" height="49"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AWR-f6-FTq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="83h-k0-x7B"/>
+                            <constraint firstItem="AWR-f6-FTq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="31" id="Aa5-5m-CI4"/>
+                            <constraint firstItem="hXS-ze-KiN" firstAttribute="trailing" secondItem="AWR-f6-FTq" secondAttribute="trailing" id="Ckq-Ug-3tD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Yv-zF-hnl" secondAttribute="bottom" constant="13" id="DrG-m4-bqf"/>
+                            <constraint firstItem="hXS-ze-KiN" firstAttribute="leading" secondItem="AWR-f6-FTq" secondAttribute="leading" id="EdR-Dl-1EB"/>
+                            <constraint firstItem="0HI-a4-pXE" firstAttribute="height" secondItem="hXS-ze-KiN" secondAttribute="height" id="F0G-ZX-Lx6"/>
+                            <constraint firstItem="0HI-a4-pXE" firstAttribute="trailing" secondItem="hXS-ze-KiN" secondAttribute="trailing" id="GDR-5q-c5c"/>
+                            <constraint firstItem="7Yv-zF-hnl" firstAttribute="leading" secondItem="0HI-a4-pXE" secondAttribute="leading" id="JZx-cR-Jyo"/>
+                            <constraint firstItem="7Yv-zF-hnl" firstAttribute="trailing" secondItem="0HI-a4-pXE" secondAttribute="trailing" id="JpB-Jt-VBZ"/>
+                            <constraint firstItem="0HI-a4-pXE" firstAttribute="leading" secondItem="hXS-ze-KiN" secondAttribute="leading" id="LTy-IE-9cr"/>
+                            <constraint firstItem="7Yv-zF-hnl" firstAttribute="height" secondItem="0HI-a4-pXE" secondAttribute="height" id="LtV-OE-YWb"/>
+                            <constraint firstItem="0HI-a4-pXE" firstAttribute="top" secondItem="hXS-ze-KiN" secondAttribute="bottom" constant="40" id="M8t-6x-oHn"/>
+                            <constraint firstItem="hXS-ze-KiN" firstAttribute="height" secondItem="AWR-f6-FTq" secondAttribute="height" id="PQ1-d6-Jud"/>
+                            <constraint firstItem="hXS-ze-KiN" firstAttribute="top" secondItem="AWR-f6-FTq" secondAttribute="bottom" constant="40" id="Qpc-Pj-0DN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AWR-f6-FTq" secondAttribute="trailing" constant="31" id="bjw-Yq-X2h"/>
+                            <constraint firstItem="7Yv-zF-hnl" firstAttribute="top" secondItem="0HI-a4-pXE" secondAttribute="bottom" constant="40" id="ipW-w4-Tp5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="hXS-ze-KiN" id="y8D-zT-zmd"/>
+                        <outlet property="passwordTextField" destination="0HI-a4-pXE" id="b8L-8g-VFN"/>
+                        <outlet property="signUpButton" destination="7Yv-zF-hnl" id="MgN-3z-0Sd"/>
+                        <outlet property="usernameTextField" destination="AWR-f6-FTq" id="w2a-WS-j6s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,8 +81,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
