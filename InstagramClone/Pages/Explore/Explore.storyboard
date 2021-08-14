@@ -21,7 +21,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="PHP-sk-P6c">
-                        <imageReference key="image" image="globe" catalog="system"/>
+                        <imageReference key="image" image="magnifyingglass" catalog="system"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="wek-7V-81t"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
