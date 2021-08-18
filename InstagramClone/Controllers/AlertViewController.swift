@@ -99,7 +99,6 @@ class AlertViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupViews()
     }
 }
@@ -115,8 +114,9 @@ private extension AlertViewController {
         }
         addButtonsStackView()
         if let secondaryButton = secondaryButton {
-            
+            addSecondaryButton(secondaryButton: secondaryButton)
         }
+        addMainButton()
     }
     
     func addBackgroundWhiteView() {

@@ -20,6 +20,8 @@ extension AlertPresentable {
         switch alertType {
         case .loginError:
             alertViewController = AlertViewController(alertTitle: "Log In Error", mainButton: AlertButton(title: "Dismiss", hideAfterAction: true))
+            
+        case .logoutConfirmation(action: let action): alertViewController = AlertViewController(alertTitle: "Log Out", subtitle: "Are you sure you want to log out?", mainButton: AlertButton(title: "Cancel"), secondaryButton: AlertButton(title: "Log Out", hideAfterAction: true, action: action))
         }
         alertViewController.modalPresentationStyle = .overFullScreen
         self.present(alertViewController, animated: true)

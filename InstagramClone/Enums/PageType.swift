@@ -15,4 +15,5 @@ enum PageType {
     case loginViewController
     case safariServicesSafariViewController(url: URL)
     case registrationViewController
+    case settingsViewController
 }

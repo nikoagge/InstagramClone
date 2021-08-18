@@ -34,6 +34,9 @@ extension Coordinator {
             
         case .registrationViewController:
             controllerToNavigate = StoryboardType.registration.getController(RegistrationViewController.self)
+            
+        case .settingsViewController:
+            controllerToNavigate = StoryboardType.settings.getController(SettingsViewController.self)
         }
         
         if let controllerToNavigate = controllerToNavigate {
@@ -45,6 +48,13 @@ extension Coordinator {
             case .present(let modalPresentationStyle, let animated):
                 controllerToNavigate.modalPresentationStyle = modalPresentationStyle
                 self.present(controllerToNavigate, animated: animated)
+                
+            case .presentAndPopToRootViewController(let modalPresentationStyle, let animated):
+                controllerToNavigate.modalPresentationStyle = modalPresentationStyle
+                self.present(controllerToNavigate, animated: animated) {
+                    self.navigationController?.popToRootViewController(animated: animated)
+                    self.tabBarController?.selectedIndex = 0
+                }
                 
             case .presentWithinNavigation(let animated, let hidesBottomBar):
                 controllerToNavigate.tabBarController?.hidesBottomBarWhenPushed = hidesBottomBar

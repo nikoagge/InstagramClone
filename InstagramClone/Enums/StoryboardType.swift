@@ -19,6 +19,7 @@ enum StoryboardType: String {
     case profile = "Profile"
     case login = "Login"
     case registration = "Registration"
+    case settings = "Settings"
 }
 
 extension StoryboardType {

@@ -52,6 +52,8 @@
 		17371D7626B70BB4008411C5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17371D7526B70BB4008411C5 /* StorageManager.swift */; };
 		173972AB26C3CC0900D1BA5F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173972AA26C3CC0900D1BA5F /* StringExtension.swift */; };
 		173B099A26BA6E96002675A3 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173B099926BA6E96002675A3 /* Registration.storyboard */; };
+		173B27E126C7FC9800D829D3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173B27E026C7FC9800D829D3 /* Settings.storyboard */; };
+		173B27E526C7FD1100D829D3 /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B27E426C7FD1100D829D3 /* SettingsCellModel.swift */; };
 		174EE24A26B7C1FA00BC9712 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */; };
 		17B1A84D26B715FC00F2CCEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17B1A84C26B715FC00F2CCEA /* GoogleService-Info.plist */; };
 		45E3367E7CDDF47FB7C42FD5 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3955F0215555F2DC1637D137 /* Pods_InstagramClone.framework */; };
@@ -105,6 +107,8 @@
 		17371D7526B70BB4008411C5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		173972AA26C3CC0900D1BA5F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		173B099926BA6E96002675A3 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		173B27E026C7FC9800D829D3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		173B27E426C7FD1100D829D3 /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 		174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		17B1A84C26B715FC00F2CCEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FF50470C1753E61639BDBDA /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -290,8 +294,8 @@
 		173B27D326C7D77400D829D3 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				170657C726B6DA23006BEB54 /* ExploreViewController.swift */,
 				170657E426B6DB83006BEB54 /* Explore.storyboard */,
+				170657C726B6DA23006BEB54 /* ExploreViewController.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -308,8 +312,8 @@
 		173B27D526C7D88000D829D3 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				170657CB26B6DA61006BEB54 /* NotificationsViewController.swift */,
 				170657E826B6DB98006BEB54 /* Notifications.storyboard */,
+				170657CB26B6DA61006BEB54 /* NotificationsViewController.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -342,7 +346,9 @@
 		173B27D926C7D8C200D829D3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				173B27E026C7FC9800D829D3 /* Settings.storyboard */,
 				170657D526B6DAED006BEB54 /* SettingsViewController.swift */,
+				173B27E426C7FD1100D829D3 /* SettingsCellModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				1714CCC526B6D5630061C01D /* LaunchScreen.storyboard in Resources */,
 				170657E726B6DB8C006BEB54 /* Camera.storyboard in Resources */,
 				173B099A26BA6E96002675A3 /* Registration.storyboard in Resources */,
+				173B27E126C7FC9800D829D3 /* Settings.storyboard in Resources */,
 				170657EB26B6DBA2006BEB54 /* Profile.storyboard in Resources */,
 				1714CCC226B6D5630061C01D /* Assets.xcassets in Resources */,
 				170657E526B6DB83006BEB54 /* Explore.storyboard in Resources */,
@@ -560,6 +567,7 @@
 				17371D5926B6ECF4008411C5 /* RegistrationViewController.swift in Sources */,
 				170657CC26B6DA61006BEB54 /* NotificationsViewController.swift in Sources */,
 				170EC73A26BC0407006D6210 /* UIColorExtension.swift in Sources */,
+				173B27E526C7FD1100D829D3 /* SettingsCellModel.swift in Sources */,
 				170657DF26B6DB48006BEB54 /* PostEditorViewController.swift in Sources */,
 				17371D5B26B6ED16008411C5 /* LoginViewController.swift in Sources */,
 				170657CE26B6DA75006BEB54 /* ProfileViewController.swift in Sources */,
