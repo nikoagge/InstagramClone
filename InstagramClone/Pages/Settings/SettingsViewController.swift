@@ -44,13 +44,57 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
 
 private extension SettingsViewController {
     func configureSettingsCellModel() {
+        settingsCellModelData.append([SettingsCellModel(title: "Edit Profile", handler: { [weak self] in
+            guard let self = self else { return }
+            self.editProfileTapped()
+        }), SettingsCellModel(title: "Invite Friends", handler: { [weak self] in
+            guard let self = self else { return }
+            self.inviteFriendsTapped()
+        }), SettingsCellModel(title: "Save Original Posts", handler: { [weak self] in
+            guard let self = self else { return }
+            self.saveOriginalPostsTapped()
+        })])
+        settingsCellModelData.append([SettingsCellModel(title: "Terms Of Service", handler: { [weak self] in
+            guard let self = self else { return }
+            self.termsOfServiceTapped()
+        }), SettingsCellModel(title: "Privacy Policy", handler: { [weak self] in
+            guard let self = self else { return }
+            self.privacyPolicyTapped()
+        }), SettingsCellModel(title: "Help / Feedback", handler: { [weak self] in
+            guard let self = self else { return }
+            self.helpOrFeedbackTapped()
+        })])
         settingsCellModelData.append([SettingsCellModel(title: "Log Out", handler: { [weak self] in
             guard let self = self else { return }
-            self.logOutTouchUpInside()
+            self.logOutTapped()
         })])
     }
     
-    @objc func logOutTouchUpInside() {
+    @objc func editProfileTapped() {
+        navigate(.init(pageType: .editProfileViewController, navigationStyle: .presentWithinNavigation(animated: true, hidesBottomBar: true)))
+    }
+    
+    @objc func inviteFriendsTapped() {
+        
+    }
+    
+    @objc func saveOriginalPostsTapped() {
+        
+    }
+    
+    @objc func termsOfServiceTapped() {
+        
+    }
+    
+    @objc func privacyPolicyTapped() {
+        
+    }
+    
+    @objc func helpOrFeedbackTapped() {
+        
+    }
+    
+    @objc func logOutTapped() {
         let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { action in
             AuthManager.shared.logOut { loggedOutSuccessfully in
                 DispatchQueue.main.async {

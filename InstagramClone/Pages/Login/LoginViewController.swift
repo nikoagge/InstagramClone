@@ -17,7 +17,7 @@ class LoginViewController: GenericViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupViews()
+        setupUI()
     }
     
     @IBAction func loginButtonTouchUpInside(_ sender: UIButton) {
@@ -66,7 +66,7 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 private extension LoginViewController {
-    func setupViews() {
+    func setupUI() {
         let _ = view.subviews.compactMap { $0 as? UITextField }.map {
             $0.fround(cornerRadius: 8)
             $0.delegate = self

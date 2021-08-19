@@ -8,10 +8,39 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
+}
 
-        // Do any additional setup after loading the view.
+private extension EditProfileViewController {
+    func setupUI() {
+        navigationBarConfiguration()
+    }
+    
+    func navigationBarConfiguration() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveBarButtonItemTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBarButtonItemTapped))
+        navigationItem.title = "Edit Profile"
+    }
+    
+    @objc func saveBarButtonItemTapped() {
+        
+    }
+    
+    @objc func cancelBarButtonItemTapped() {
+        
+    }
+    
+    @objc func changeProfilePictureTapped() {
+        let alertActions = [UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+            
+        }), UIAlertAction(title: "Choose from Library", style: .default, handler: { _ in
+            
+        }), UIAlertAction(title: "Cancel", style: .cancel)]
+        showActionSheetController(title: "Profile Picture", message: "Change profile picture", alertActions: alertActions, viewController: self, sourceView: view)
     }
 }

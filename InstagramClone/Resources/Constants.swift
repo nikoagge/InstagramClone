@@ -13,4 +13,5 @@ class Constants {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
     static let instagramTermsOfServiceURL = "https://www.instagram.com/about/legal/terms/before-january-19-2013/"
     static let instagramPrivacyURL = "https://help.instagram.com/116024195217477"
+    static let instagramHelpURL = "https://help.instagram.com"
 }

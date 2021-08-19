@@ -18,7 +18,7 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupViews()
+        setupUI()
     }
 }
 
@@ -40,7 +40,7 @@ extension RegistrationViewController: UITextFieldDelegate {
 }
 
 private extension RegistrationViewController {
-    func setupViews() {
+    func setupUI() {
         let _ = view.subviews.compactMap { $0 as? UITextField }.map { $0.delegate = self }
         signUpButton.addTarget(self, action: #selector(signUpButtonTouchUpInside), for: .touchUpInside)
     }

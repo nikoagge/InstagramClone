@@ -99,12 +99,12 @@ class AlertViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
+        setupUI()
     }
 }
 
 private extension AlertViewController {
-    func setupViews() {
+    func setupUI() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         addBackgroundWhiteView()
         addContentStackView()

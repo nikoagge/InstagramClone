@@ -12,12 +12,12 @@ class ProfileViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViews()
+        setupUI()
     }
 }
 
 private extension ProfileViewController {
-    func setupViews() {
+    func setupUI() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(settingsBarButtonItemTapped))
     }
     

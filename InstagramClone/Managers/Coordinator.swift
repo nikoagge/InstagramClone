@@ -37,6 +37,9 @@ extension Coordinator {
             
         case .settingsViewController:
             controllerToNavigate = StoryboardType.settings.getController(SettingsViewController.self)
+            
+        case .editProfileViewController:
+            controllerToNavigate = StoryboardType.editProfile.getController(EditProfileViewController.self)
         }
         
         if let controllerToNavigate = controllerToNavigate {
@@ -59,7 +62,6 @@ extension Coordinator {
             case .presentWithinNavigation(let animated, let hidesBottomBar):
                 controllerToNavigate.tabBarController?.hidesBottomBarWhenPushed = hidesBottomBar
                 let navigationController = UINavigationController(rootViewController: controllerToNavigate)
-                navigationController.isNavigationBarHidden = true
                 self.present(navigationController, animated: animated)
                 
             case .push(let animated):
