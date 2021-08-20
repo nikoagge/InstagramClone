@@ -11,7 +11,7 @@ import UIKit
 
 enum NavigationStyle {
     case present(modalPresentationStyle: UIModalPresentationStyle, animated: Bool)
-    case presentWithinNavigation(animated: Bool, hidesBottomBar: Bool)
+    case presentWithinNavigation(animated: Bool, hidesBottomBar: Bool, modalPresentationStyle: UIModalPresentationStyle)
     case presentAndPopToRootViewController(modalPresentationStyle: UIModalPresentationStyle, animated: Bool)
     case push(animated: Bool)
     case replace(animated: Bool)

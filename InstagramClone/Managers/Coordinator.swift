@@ -59,9 +59,10 @@ extension Coordinator {
                     self.tabBarController?.selectedIndex = 0
                 }
                 
-            case .presentWithinNavigation(let animated, let hidesBottomBar):
+            case .presentWithinNavigation(let animated, let hidesBottomBar, let modalPresentationStyle):
                 controllerToNavigate.tabBarController?.hidesBottomBarWhenPushed = hidesBottomBar
                 let navigationController = UINavigationController(rootViewController: controllerToNavigate)
+                navigationController.modalPresentationStyle = modalPresentationStyle
                 self.present(navigationController, animated: animated)
                 
             case .push(let animated):

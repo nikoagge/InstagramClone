@@ -71,7 +71,7 @@ private extension SettingsViewController {
     }
     
     @objc func editProfileTapped() {
-        navigate(.init(pageType: .editProfileViewController, navigationStyle: .presentWithinNavigation(animated: true, hidesBottomBar: true)))
+        navigate(.init(pageType: .editProfileViewController, navigationStyle: .presentWithinNavigation(animated: true, hidesBottomBar: true, modalPresentationStyle: .fullScreen)))
     }
     
     @objc func inviteFriendsTapped() {
