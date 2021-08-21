@@ -9,5 +9,12 @@
 import Foundation
 
 public struct UserPost {
+    let identifier: String
     let userPostType: UserPostType
+    let thumbnailImageURL: URL
+    let caption: String
+    let postLikes: [PostLike]
+    let postComments: [PostComment]
+    let createdDate: Date
+    let taggedUsers: [User]
 }

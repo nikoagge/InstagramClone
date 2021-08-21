@@ -5,16 +5,34 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
             <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqL-fn-Mno">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
-            <point key="canvasLocation" x="130" y="81"/>
+            <constraints>
+                <constraint firstItem="tqL-fn-Mno" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="3By-qP-Kfk"/>
+                <constraint firstItem="tqL-fn-Mno" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="Yby-0i-dL8"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="tqL-fn-Mno" secondAttribute="trailing" id="huA-gc-X0g"/>
+                <constraint firstAttribute="top" secondItem="tqL-fn-Mno" secondAttribute="top" id="oQB-PJ-bFY"/>
+            </constraints>
+            <point key="canvasLocation" x="128.98550724637681" y="104.79910714285714"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
