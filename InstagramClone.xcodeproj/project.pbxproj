@@ -58,6 +58,8 @@
 		1741C89526D14547002C0DEC /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C89426D14547002C0DEC /* Gender.swift */; };
 		1741C89726D14593002C0DEC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C89626D14593002C0DEC /* User.swift */; };
 		1741C89926D14600002C0DEC /* UserCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741C89826D14600002C0DEC /* UserCount.swift */; };
+		1741C89B26D14932002C0DEC /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1741C89A26D14932002C0DEC /* Post.storyboard */; };
+		1741C89D26D18580002C0DEC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1741C89C26D18580002C0DEC /* List.storyboard */; };
 		1747349A26CF1EF5007E2A5B /* EditProfileFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747349826CF1EF5007E2A5B /* EditProfileFormTableViewCell.swift */; };
 		1747349B26CF1EF5007E2A5B /* EditProfileFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1747349926CF1EF5007E2A5B /* EditProfileFormTableViewCell.xib */; };
 		174AA58F26CCE8F20051DB5C /* InstagramFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AA58D26CCE8F20051DB5C /* InstagramFeedPostTableViewCell.swift */; };
@@ -142,6 +144,8 @@
 		1741C89426D14547002C0DEC /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		1741C89626D14593002C0DEC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1741C89826D14600002C0DEC /* UserCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCount.swift; sourceTree = "<group>"; };
+		1741C89A26D14932002C0DEC /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		1741C89C26D18580002C0DEC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		1747349826CF1EF5007E2A5B /* EditProfileFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileFormTableViewCell.swift; sourceTree = "<group>"; };
 		1747349926CF1EF5007E2A5B /* EditProfileFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileFormTableViewCell.xib; sourceTree = "<group>"; };
 		174AA58D26CCE8F20051DB5C /* InstagramFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramFeedPostTableViewCell.swift; sourceTree = "<group>"; };
@@ -411,6 +415,7 @@
 		173B27D726C7D8AB00D829D3 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				1741C89A26D14932002C0DEC /* Post.storyboard */,
 				170657D126B6DAA9006BEB54 /* PostViewController.swift */,
 			);
 			path = Post;
@@ -443,6 +448,7 @@
 		173B27DA26C7D90A00D829D3 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				1741C89C26D18580002C0DEC /* List.storyboard */,
 				170657D726B6DB01006BEB54 /* ListViewController.swift */,
 			);
 			path = List;
@@ -577,6 +583,7 @@
 				174AA59026CCE8F20051DB5C /* InstagramFeedPostTableViewCell.xib in Resources */,
 				174BAE3C26CF8F500016F68C /* PhotoCollectionViewCell.xib in Resources */,
 				1714CCC226B6D5630061C01D /* Assets.xcassets in Resources */,
+				1741C89D26D18580002C0DEC /* List.storyboard in Resources */,
 				170657E526B6DB83006BEB54 /* Explore.storyboard in Resources */,
 				170657E926B6DB98006BEB54 /* Notifications.storyboard in Resources */,
 				174BAE3826CF8F060016F68C /* Profile.storyboard in Resources */,
@@ -588,6 +595,7 @@
 				17371D6B26B6F63C008411C5 /* Login.storyboard in Resources */,
 				170657E326B6DB76006BEB54 /* Home.storyboard in Resources */,
 				174AA59426CCEF600051DB5C /* InstagramFeedPostHeaderTableViewCell.xib in Resources */,
+				1741C89B26D14932002C0DEC /* Post.storyboard in Resources */,
 				174AA59826CCF0EA0051DB5C /* InstagramFeedPostActionsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

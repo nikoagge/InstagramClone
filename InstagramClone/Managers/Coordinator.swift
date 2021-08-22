@@ -40,6 +40,16 @@ extension Coordinator {
             
         case .editProfileViewController:
             controllerToNavigate = StoryboardType.editProfile.getController(EditProfileViewController.self)
+            
+        case .postViewController(let userPost):
+            controllerToNavigate = StoryboardType.post.getController(PostViewController.self) { postViewController in
+                postViewController.userPost = userPost
+            }
+            
+        case .listViewController(let viewControllerTitle):
+            controllerToNavigate = StoryboardType.list.getController(ListViewController.self) { listViewController in
+                listViewController.viewControllerTitle = viewControllerTitle
+            }
         }
         
         if let controllerToNavigate = controllerToNavigate {

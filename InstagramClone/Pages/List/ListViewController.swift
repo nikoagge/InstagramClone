@@ -8,8 +8,18 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: GenericViewController {
+    var viewControllerTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
+}
+
+private extension ListViewController {
+    func setupUI() {
+        title = viewControllerTitle
     }
 }
