@@ -12,12 +12,14 @@ class ProfileViewController: GenericViewController {
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
     private var userPosts = [UserPost]()
+    var userRelationships = [UserRelationship]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         profileCollectionViewConfiguration()
+        fillUserRelationshipsWithData()
     }
 }
 
@@ -77,11 +79,11 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileInfoHeaderCollectionReusableViewDidTapFollowingButton(profileInfoHeaderCollectionReusableView: ProfileInfoHeaderCollectionReusableView) {
-        navigate(.init(pageType: .listViewController(viewControllerTitle: "Following"), navigationStyle: .push(animated: true)))
+        navigate(.init(pageType: .listViewController(viewControllerTitle: "Following", userRelationships: userRelationships), navigationStyle: .push(animated: true)))
     }
     
     func profileInfoHeaderCollectionReusableViewDidTapFollowersButton(profileInfoHeaderCollectionReusableView: ProfileInfoHeaderCollectionReusableView) {
-        navigate(.init(pageType: .listViewController(viewControllerTitle: "Followers"), navigationStyle: .push(animated: true)))
+        navigate(.init(pageType: .listViewController(viewControllerTitle: "Followers", userRelationships: userRelationships), navigationStyle: .push(animated: true)))
     }
     
     func profileInfoHeaderCollectionReusableViewDidTapEditProfileButton(profileInfoHeaderCollectionReusableView: ProfileInfoHeaderCollectionReusableView) {
@@ -112,6 +114,12 @@ private extension ProfileViewController {
         profileCollectionView.register(UINib(nibName: PhotoCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         profileCollectionView.register(UINib(nibName: ProfileInfoHeaderCollectionReusableView.nibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier)
         profileCollectionView.register(UINib(nibName: ProfileTabsHeaderCollectionReusableView.nibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabsHeaderCollectionReusableView.identifier)
+    }
+    
+    func fillUserRelationshipsWithData() {
+        for i in 0..<13 {
+            userRelationships.append(UserRelationship(name: "Joe Smith", userName: "@joe", followState: i % 2 == 0 ? .following : .notFollowing))
+        }
     }
     
     @objc func settingsBarButtonItemTapped() {

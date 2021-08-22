@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="UserFollowTableViewCell" customModule="InstagramClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LNP-nc-UHP">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="suZ-oY-EEl"/>
+                            <constraint firstAttribute="width" constant="40" id="wRA-va-Kmt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjl-qa-ogf">
+                        <rect key="frame" x="61" y="8" width="46.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUM-QD-gbu">
+                        <rect key="frame" x="168.5" y="3.5" width="143.5" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="Vz0-QF-5Ns"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Follow/Unfollow"/>
+                        <connections>
+                            <action selector="followUnfollowButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ClP-n2-EOI"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdb-3m-5in">
+                        <rect key="frame" x="61" y="28.5" width="46.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Bdb-3m-5in" firstAttribute="leading" secondItem="vjl-qa-ogf" secondAttribute="leading" id="2uL-oX-Tz9"/>
+                    <constraint firstItem="LNP-nc-UHP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JCU-Fb-v5S"/>
+                    <constraint firstItem="vjl-qa-ogf" firstAttribute="leading" secondItem="LNP-nc-UHP" secondAttribute="trailing" constant="13" id="LOv-A1-BhL"/>
+                    <constraint firstItem="LNP-nc-UHP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="RCu-9f-zOQ"/>
+                    <constraint firstItem="rUM-QD-gbu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bdb-3m-5in" secondAttribute="trailing" constant="13" id="UUb-sH-rgX"/>
+                    <constraint firstItem="Bdb-3m-5in" firstAttribute="bottom" secondItem="LNP-nc-UHP" secondAttribute="bottom" id="YkW-gY-PDk"/>
+                    <constraint firstItem="rUM-QD-gbu" firstAttribute="centerY" secondItem="LNP-nc-UHP" secondAttribute="centerY" id="mus-Rr-FXc"/>
+                    <constraint firstAttribute="trailing" secondItem="rUM-QD-gbu" secondAttribute="trailing" constant="8" id="qOT-QF-DVa"/>
+                    <constraint firstItem="vjl-qa-ogf" firstAttribute="top" secondItem="LNP-nc-UHP" secondAttribute="top" id="saZ-mu-Cjj"/>
+                    <constraint firstItem="rUM-QD-gbu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vjl-qa-ogf" secondAttribute="trailing" constant="13" id="zWO-HW-JvI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="followUnfollowButton" destination="rUM-QD-gbu" id="UI7-O4-nyq"/>
+                <outlet property="nameLabel" destination="vjl-qa-ogf" id="jxl-Cb-Z0V"/>
+                <outlet property="profilePhotoImageView" destination="LNP-nc-UHP" id="P3d-Li-iwW"/>
+                <outlet property="userNameLabel" destination="Bdb-3m-5in" id="i8Q-lm-Kbg"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="127.23214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -46,9 +46,10 @@ extension Coordinator {
                 postViewController.userPost = userPost
             }
             
-        case .listViewController(let viewControllerTitle):
+        case .listViewController(let viewControllerTitle, let userRelationships):
             controllerToNavigate = StoryboardType.list.getController(ListViewController.self) { listViewController in
                 listViewController.viewControllerTitle = viewControllerTitle
+                listViewController.userRelationships = userRelationships
             }
         }
         

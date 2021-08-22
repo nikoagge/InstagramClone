@@ -9,26 +9,30 @@
 import UIKit
 
 class ListViewController: GenericViewController {
+    @IBOutlet weak var followersListTableView: UITableView!
+    
     var viewControllerTitle: String?
-     var data: [String]?
+    var userRelationships = [UserRelationship]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        followersListTableViewConfiguration()
     }
 }
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.count ?? 0
+        return userRelationships.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        tableViewCell.textLabel?.text = data?[indexPath.row]
+        let userFollowTableViewCell = tableView.dequeueReusableCell(withIdentifier: UserFollowTableViewCell.identifier, for: indexPath) as! UserFollowTableViewCell
+        userFollowTableViewCell.configure(userRelationship: userRelationships[indexPath.row])
+        userFollowTableViewCell.userFollowTableViewCellDelegate = self
         
-        return tableViewCell
+        return userFollowTableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -36,8 +40,24 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension ListViewController: UserFollowTableViewCellDelegate {
+    func userFollowTableViewCellDidTapFollowUnfollowButton(userRelationship: UserRelationship) {
+        switch userRelationship.followState {
+        case .following:
+            break
+            
+        case .notFollowing:
+            break
+        }
+    }
+}
+
 private extension ListViewController {
     func setupUI() {
         title = viewControllerTitle
+    }
+    
+    func followersListTableViewConfiguration() {
+        followersListTableView.register(UINib(nibName: UserFollowTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: UserFollowTableViewCell.identifier)
     }
 }
