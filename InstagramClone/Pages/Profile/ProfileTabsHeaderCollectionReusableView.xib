@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,12 +13,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ProfileTabsHeaderCollectionReusableView" customModule="InstagramClone" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+            <rect key="frame" x="0.0" y="0.0" width="397" height="212"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-ci-4qh">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                    <rect key="frame" x="0.0" y="0.0" width="397" height="212"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0a-nQ-3IO">
+                            <rect key="frame" x="13" y="88" width="185.5" height="36"/>
+                            <color key="tintColor" systemColor="systemBlueColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <imageReference key="image" image="square.grid.2x2" catalog="system"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="gridButtonTouchUpInside:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="tKn-d2-dHP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mJ-qI-Q11">
+                            <rect key="frame" x="198.5" y="86" width="185.5" height="40.5"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <imageReference key="image" image="tag" catalog="system"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="taggedButtonTouchUpInside:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="C62-PV-aA3"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3mJ-qI-Q11" secondAttribute="trailing" constant="13" id="DrM-tE-TGd"/>
+                        <constraint firstItem="3mJ-qI-Q11" firstAttribute="leading" secondItem="oG0-ci-4qh" secondAttribute="centerX" id="W7e-d1-XsM"/>
+                        <constraint firstItem="3mJ-qI-Q11" firstAttribute="centerY" secondItem="oG0-ci-4qh" secondAttribute="centerY" id="bXm-Hp-ION"/>
+                        <constraint firstItem="l0a-nQ-3IO" firstAttribute="leading" secondItem="oG0-ci-4qh" secondAttribute="leading" constant="13" id="drz-k6-jBT"/>
+                        <constraint firstItem="l0a-nQ-3IO" firstAttribute="centerY" secondItem="oG0-ci-4qh" secondAttribute="centerY" id="eB1-PX-6VQ"/>
+                        <constraint firstAttribute="centerX" secondItem="l0a-nQ-3IO" secondAttribute="trailing" id="wmz-3o-8AY"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
@@ -27,12 +60,21 @@
                 <constraint firstItem="oG0-ci-4qh" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="PFf-uO-Kmv"/>
                 <constraint firstAttribute="top" secondItem="oG0-ci-4qh" secondAttribute="top" id="ex8-Bj-MyU"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="85.379464285714278"/>
+            <connections>
+                <outlet property="gridButton" destination="l0a-nQ-3IO" id="ggt-I2-Gx4"/>
+                <outlet property="taggedButton" destination="3mJ-qI-Q11" id="zPB-uA-6WJ"/>
+            </connections>
+            <point key="canvasLocation" x="-77.536231884057983" y="107.8125"/>
         </collectionReusableView>
     </objects>
     <resources>
+        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="tag" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

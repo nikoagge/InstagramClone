@@ -83,6 +83,8 @@
 		174BAE3C26CF8F500016F68C /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174BAE3A26CF8F500016F68C /* PhotoCollectionViewCell.xib */; };
 		174EE24A26B7C1FA00BC9712 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */; };
 		1751F41C26CEC356002564BD /* EditProfileForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751F41B26CEC356002564BD /* EditProfileForm.swift */; };
+		1751F9FA26D2672800FED324 /* UsersFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751F9F826D2672800FED324 /* UsersFollowTableViewCell.swift */; };
+		1751F9FB26D2672800FED324 /* UsersFollowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1751F9F926D2672800FED324 /* UsersFollowTableViewCell.xib */; };
 		17531CFF26D02B0500B34038 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531CFE26D02B0500B34038 /* PostComment.swift */; };
 		17531D0126D02CC800B34038 /* PostLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531D0026D02CC800B34038 /* PostLike.swift */; };
 		17531D0326D02E5900B34038 /* CommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531D0226D02E5900B34038 /* CommentLike.swift */; };
@@ -169,6 +171,8 @@
 		174BAE3A26CF8F500016F68C /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		174EE24926B7C1FA00BC9712 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1751F41B26CEC356002564BD /* EditProfileForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileForm.swift; sourceTree = "<group>"; };
+		1751F9F826D2672800FED324 /* UsersFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFollowTableViewCell.swift; sourceTree = "<group>"; };
+		1751F9F926D2672800FED324 /* UsersFollowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersFollowTableViewCell.xib; sourceTree = "<group>"; };
 		17531CFE26D02B0500B34038 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		17531D0026D02CC800B34038 /* PostLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLike.swift; sourceTree = "<group>"; };
 		17531D0226D02E5900B34038 /* CommentLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLike.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 			children = (
 				1741C89C26D18580002C0DEC /* List.storyboard */,
 				170657D726B6DB01006BEB54 /* ListViewController.swift */,
+				1751F9F926D2672800FED324 /* UsersFollowTableViewCell.xib */,
+				1751F9F826D2672800FED324 /* UsersFollowTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				17B1A84D26B715FC00F2CCEA /* GoogleService-Info.plist in Resources */,
 				174AA5A826CD1D530051DB5C /* SettingsTableViewCell.xib in Resources */,
 				1741C89326D14408002C0DEC /* ProfileTabsHeaderCollectionReusableView.xib in Resources */,
+				1751F9FB26D2672800FED324 /* UsersFollowTableViewCell.xib in Resources */,
 				174AA59C26CCF15F0051DB5C /* InstagramFeedPostGeneralTableViewCell.xib in Resources */,
 				17371D6B26B6F63C008411C5 /* Login.storyboard in Resources */,
 				170657E326B6DB76006BEB54 /* Home.storyboard in Resources */,
@@ -678,6 +685,7 @@
 				170657DD26B6DB32006BEB54 /* SearchResultViewController.swift in Sources */,
 				170657DB26B6DB1D006BEB54 /* SearchViewController.swift in Sources */,
 				17371D6126B6EF09008411C5 /* StoryboardType.swift in Sources */,
+				1751F9FA26D2672800FED324 /* UsersFollowTableViewCell.swift in Sources */,
 				17371D6526B6F18D008411C5 /* NavigationItem.swift in Sources */,
 				17371D5926B6ECF4008411C5 /* RegistrationViewController.swift in Sources */,
 				174AA59E26CCF2EC0051DB5C /* UserPost.swift in Sources */,

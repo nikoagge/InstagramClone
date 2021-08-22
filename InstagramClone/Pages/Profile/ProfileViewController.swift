@@ -51,6 +51,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         
         if indexPath.section == 1 {
             let profileTabsHeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileTabsHeaderCollectionReusableView
+            profileTabsHeaderCollectionReusableView.profileTabsHeaderCollectionReusableViewDelegate = self
             
             return profileTabsHeaderCollectionReusableView
         }
@@ -86,8 +87,14 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     func profileInfoHeaderCollectionReusableViewDidTapEditProfileButton(profileInfoHeaderCollectionReusableView: ProfileInfoHeaderCollectionReusableView) {
         navigate(.init(pageType: .editProfileViewController, navigationStyle: .presentWithinNavigation(animated: true, hidesBottomBar: true, modalPresentationStyle: .overFullScreen)))
     }
+}
+
+extension ProfileViewController: ProfileTabsHeaderCollectionReusableViewDelegate {
+    func profileTabsHeaderCollectionReusableViewDidTapGridButton() {
+    }
     
-    
+    func profileTabsHeaderCollectionReusableViewDidTapTaggedButton() {
+    }
 }
 
 private extension ProfileViewController {
