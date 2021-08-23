@@ -18,4 +18,5 @@ public struct UserPost {
     let postComments: [PostComment]
     let createdDate: Date
     let taggedUsers: [User]
+    let owner: User
 }

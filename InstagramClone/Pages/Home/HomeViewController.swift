@@ -12,6 +12,8 @@ import FirebaseAuth
 class HomeViewController: GenericViewController {
     @IBOutlet weak var instagramFeedPostsTableView: UITableView!
     
+    private var homeFeedRenderViewModels = [HomeFeedRenderViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,9 @@ private extension HomeViewController {
     
     func instagramFeedPostsTableViewConfiguration() {
         instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostHeaderTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostHeaderTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostGeneralTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostGeneralTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostActionsTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostActionsTableViewCell.identifier)
     }
 }
 

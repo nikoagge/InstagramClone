@@ -17,6 +17,6 @@ enum PageType {
     case registrationViewController
     case settingsViewController
     case editProfileViewController
-    case postViewController(userPost: UserPost)
+    case postViewController(userPost: UserPost, viewControllerTitle: String)
     case listViewController(viewControllerTitle: String, userRelationships: [UserRelationship])
 }

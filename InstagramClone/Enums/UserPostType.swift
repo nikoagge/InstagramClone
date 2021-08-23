@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UserPostType {
-    case photo
-    case video
+enum UserPostType: String {
+    case photo = "Photo"
+    case video = "Video"
 }

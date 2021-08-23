@@ -54,6 +54,12 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
 
 extension NotificationsViewController: NotificationLikeEventTableViewCellDelegate {
     func notificationLikeEventTableViewCellDidTapRelatedPostButton(userNotification: UserNotification) {
+        switch userNotification.userNotificationType {
+        case .like(let userPost):
+            navigate(.init(pageType: .postViewController(userPost: userPost, viewControllerTitle: userPost.userPostType.rawValue), navigationStyle: .push(animated: true)))
+        case .follow(_):
+            fatalError("Dev issue here, should never get there")
+        }
     }
 }
 
@@ -79,7 +85,7 @@ private extension NotificationsViewController {
     
     func fetchUserNotifications() {
         for i in 0...103 {
-            userNotifications.append(UserNotification(userNotificationType: i % 2 == 0 ? .like(userPost: UserPost(identifier: "", userPostType: .photo, thumbnailImageURL: URL(string: "https://www.google.com/")!, postURL: URL(string: "https://www.google.com/")!, caption: "", postLikes: [], postComments: [], createdDate: Date(), taggedUsers: [])) : .follow(followState: .notFollowing), notificationText: "Notification Sample", user: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil)))
+            userNotifications.append(UserNotification(userNotificationType: i % 2 == 0 ? .like(userPost: UserPost(identifier: "", userPostType: .photo, thumbnailImageURL: URL(string: "https://www.google.com/")!, postURL: URL(string: "https://www.google.com/")!, caption: "", postLikes: [], postComments: [], createdDate: Date(), taggedUsers: [], owner: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil))) : .follow(followState: .notFollowing), notificationText: "Notification Sample", user: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil)))
         }
     }
 }

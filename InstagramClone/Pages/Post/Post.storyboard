@@ -36,6 +36,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="aqf-r6-vap"/>
+                    <connections>
+                        <outlet property="postTableView" destination="2W4-qn-HCb" id="8E2-Ym-xC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

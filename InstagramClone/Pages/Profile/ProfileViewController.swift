@@ -45,7 +45,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        navigate(.init(pageType: .postViewController(userPost: userPosts[indexPath.row]), navigationStyle: .push(animated: true)))
+        navigate(.init(pageType: .postViewController(userPost: userPosts[indexPath.row], viewControllerTitle: userPosts[indexPath.row].userPostType.rawValue), navigationStyle: .push(animated: true)))
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

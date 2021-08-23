@@ -11,4 +11,11 @@ import UIKit
 class InstagramFeedPostActionsTableViewCell: UITableViewCell {
     static let identifier = "InstagramFeedPostActionsTableViewCell"
     static let nibName = "InstagramFeedPostActionsTableViewCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configure() {
+    }
 }
