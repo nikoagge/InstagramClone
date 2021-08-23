@@ -92,6 +92,8 @@
 		1751FA0526D2AEE800FED324 /* NotificationFollowEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1751FA0326D2AEE800FED324 /* NotificationFollowEventTableViewCell.xib */; };
 		1751FA0826D2AF9800FED324 /* NotificationLikeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751FA0626D2AF9800FED324 /* NotificationLikeEventTableViewCell.swift */; };
 		1751FA0926D2AF9800FED324 /* NotificationLikeEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1751FA0726D2AF9800FED324 /* NotificationLikeEventTableViewCell.xib */; };
+		1751FA0B26D2B37600FED324 /* UserNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751FA0A26D2B37600FED324 /* UserNotificationType.swift */; };
+		1751FA0D26D2B39A00FED324 /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751FA0C26D2B39A00FED324 /* UserNotification.swift */; };
 		17531CFF26D02B0500B34038 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531CFE26D02B0500B34038 /* PostComment.swift */; };
 		17531D0126D02CC800B34038 /* PostLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531D0026D02CC800B34038 /* PostLike.swift */; };
 		17531D0326D02E5900B34038 /* CommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17531D0226D02E5900B34038 /* CommentLike.swift */; };
@@ -187,6 +189,8 @@
 		1751FA0326D2AEE800FED324 /* NotificationFollowEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationFollowEventTableViewCell.xib; sourceTree = "<group>"; };
 		1751FA0626D2AF9800FED324 /* NotificationLikeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLikeEventTableViewCell.swift; sourceTree = "<group>"; };
 		1751FA0726D2AF9800FED324 /* NotificationLikeEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationLikeEventTableViewCell.xib; sourceTree = "<group>"; };
+		1751FA0A26D2B37600FED324 /* UserNotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationType.swift; sourceTree = "<group>"; };
+		1751FA0C26D2B39A00FED324 /* UserNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		17531CFE26D02B0500B34038 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		17531D0026D02CC800B34038 /* PostLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLike.swift; sourceTree = "<group>"; };
 		17531D0226D02E5900B34038 /* CommentLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLike.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				1741C89626D14593002C0DEC /* User.swift */,
 				1741C89826D14600002C0DEC /* UserCount.swift */,
 				1751F9FE26D27B4E00FED324 /* UserRelationship.swift */,
+				1751FA0C26D2B39A00FED324 /* UserNotification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				174AA5A126CCFDBE0051DB5C /* StorageManagerError.swift */,
 				1741C89426D14547002C0DEC /* Gender.swift */,
 				1751F9FC26D27ABB00FED324 /* FollowState.swift */,
+				1751FA0A26D2B37600FED324 /* UserNotificationType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -734,6 +740,8 @@
 				1751FA0126D296E500FED324 /* NoNotificationsView.swift in Sources */,
 				174AA5A726CD1D530051DB5C /* SettingsTableViewCell.swift in Sources */,
 				170EC73826BBFB15006D6210 /* CommonButton.swift in Sources */,
+				1751FA0D26D2B39A00FED324 /* UserNotification.swift in Sources */,
+				1751FA0B26D2B37600FED324 /* UserNotificationType.swift in Sources */,
 				1751F9FF26D27B4E00FED324 /* UserRelationship.swift in Sources */,
 				1741C89926D14600002C0DEC /* UserCount.swift in Sources */,
 				173972AB26C3CC0900D1BA5F /* StringExtension.swift in Sources */,

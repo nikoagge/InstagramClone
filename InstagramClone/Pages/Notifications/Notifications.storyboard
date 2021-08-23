@@ -26,10 +26,6 @@
                                     <constraint firstAttribute="width" constant="100" id="RYW-BJ-wJI"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4l-Pc-ivl" customClass="NoNotificationsView" customModule="InstagramClone" customModuleProvider="target">
-                                <rect key="frame" x="103.5" y="267" width="207" height="362.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-fV-5nO">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,12 +50,8 @@
                         <constraints>
                             <constraint firstItem="KuC-fV-5nO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2N1-Xc-K1x"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KuC-fV-5nO" secondAttribute="bottom" id="4OZ-Yc-2d3"/>
-                            <constraint firstItem="T4l-Pc-ivl" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="5kn-q2-etS"/>
-                            <constraint firstItem="T4l-Pc-ivl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="BeS-0i-xLu"/>
                             <constraint firstItem="Ghi-bd-va9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IZ3-6f-GN0"/>
-                            <constraint firstItem="T4l-Pc-ivl" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.5" id="MpC-an-B65"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KuC-fV-5nO" secondAttribute="trailing" id="SUg-QE-eQd"/>
-                            <constraint firstItem="T4l-Pc-ivl" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.5" id="Uv0-bc-3eP"/>
                             <constraint firstItem="KuC-fV-5nO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pEc-xC-uYQ"/>
                             <constraint firstItem="Ghi-bd-va9" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="s7C-8O-D6h"/>
                         </constraints>
@@ -70,7 +62,6 @@
                     <navigationItem key="navigationItem" id="r9k-Pj-42P"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="noNotificationsView" destination="T4l-Pc-ivl" id="6pe-FB-kUM"/>
                         <outlet property="notificationsTableView" destination="KuC-fV-5nO" id="tsb-Tb-c7S"/>
                         <outlet property="spinner" destination="Ghi-bd-va9" id="tYD-eN-tK9"/>
                     </connections>

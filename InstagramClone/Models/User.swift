@@ -14,6 +14,7 @@ struct User {
     let name: (first: String, last: String)
     let birthDate: Date
     let gender: Gender
-    let userCounts: [UserCount]
+    let userCounts: UserCount
     let joinDate: Date
+    let profilePhotoURL: URL?
 }

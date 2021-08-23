@@ -12,6 +12,7 @@ public struct UserPost {
     let identifier: String
     let userPostType: UserPostType
     let thumbnailImageURL: URL
+    let postURL: URL
     let caption: String
     let postLikes: [PostLike]
     let postComments: [PostComment]
