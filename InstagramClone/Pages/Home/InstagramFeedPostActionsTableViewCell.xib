@@ -28,7 +28,8 @@
                         <color key="tintColor" systemColor="labelColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="heart.fill" catalog="system"/>
+                            <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="31" weight="thin"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="likeButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Itc-4c-jMm"/>
@@ -40,6 +41,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="message.fill" catalog="system"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="31" weight="thin"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="commentButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qL1-tq-1HQ"/>
@@ -51,6 +53,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="paperplane.fill" catalog="system"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="31" weight="thin"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="sendButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VRT-ha-dyi"/>
