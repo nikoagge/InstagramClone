@@ -77,9 +77,6 @@ extension PostViewController: UITableViewDataSource, UITableViewDelegate {
             
             return instagramFeedPostGeneralTableViewCell
         }
-        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        return tableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
