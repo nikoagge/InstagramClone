@@ -8,14 +8,46 @@
 
 import UIKit
 
+protocol InstagramFeedPostActionsTableViewCellDelegate: AnyObject {
+    func didTapLikeButton()
+    func didTapCommentButton()
+    func didTapSendButton()
+}
+
 class InstagramFeedPostActionsTableViewCell: UITableViewCell {
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    
     static let identifier = "InstagramFeedPostActionsTableViewCell"
     static let nibName = "InstagramFeedPostActionsTableViewCell"
     
+    weak var instagramFeedPostActionsTableViewCellDelegate: InstagramFeedPostActionsTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupUI()
     }
     
-    func configure() {
+    @IBAction func likeButtonTouchUpInside(_ sender: UIButton) {
+        instagramFeedPostActionsTableViewCellDelegate?.didTapLikeButton()
+    }
+    
+    @IBAction func commentButtonTouchUpInside(_ sender: UIButton) {
+        instagramFeedPostActionsTableViewCellDelegate?.didTapCommentButton()
+    }
+    
+    @IBAction func sendButtonTouchUpInside(_ sender: UIButton) {
+        instagramFeedPostActionsTableViewCellDelegate?.didTapSendButton()
+    }
+    
+    func configure(userPost: UserPost) {
+    }
+}
+
+private extension InstagramFeedPostActionsTableViewCell {
+    func setupUI() {
+        let _ = contentView.subviews.compactMap { $0 as? UIButton }.map { $0.setTitle("", for: .normal) }
     }
 }

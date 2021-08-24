@@ -17,43 +17,14 @@ class HomeViewController: GenericViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         createMockData()
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         handleNotAuthenticated()
-    }
-}
-
-private extension HomeViewController {
-    func setupUI() {
-        instagramFeedPostsTableViewConfiguration()
-    }
-    
-    func createMockData() {
-        var postComments = [PostComment]()
-        for i in 0..<4 {
-            postComments.append(PostComment(identifier: "\(i)", userName: "@john", text: "This is some sample text for this post", createdDate: Date(), likes: []))
-        }
-        for index in 0..<8 {
-            let homeFeedRenderViewModel = HomeFeedRenderViewModel(header: PostRenderViewModel(postRenderType: .header(provider: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil))), post: PostRenderViewModel(postRenderType: .primaryContent(provider: UserPost(identifier: "", userPostType: .photo, thumbnailImageURL: URL(string: "https://www.google.com/")!, postURL: URL(string: "https://www.google.com/")!, caption: "", postLikes: [], postComments: [], createdDate: Date(), taggedUsers: [], owner: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil)))), actions: PostRenderViewModel(postRenderType: .actions(provider: "")), comments: PostRenderViewModel(postRenderType: .comments(comments: postComments)))
-        }
-    }
-    
-    func handleNotAuthenticated() {
-        if Auth.auth().currentUser == nil {
-            navigate(.init(pageType: .loginViewController, navigationStyle: .present(modalPresentationStyle: .overFullScreen, animated: true)))
-        }
-    }
-    
-    func instagramFeedPostsTableViewConfiguration() {
-        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostTableViewCell.identifier)
-        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostHeaderTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostHeaderTableViewCell.identifier)
-        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostGeneralTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostGeneralTableViewCell.identifier)
-        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostActionsTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostActionsTableViewCell.identifier)
     }
 }
 
@@ -100,7 +71,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if subSection == 0 {
             switch homeFeedRenderViewModel.header.postRenderType {
             case .header(let user):
-                let instagramFeedPostHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostHeaderTableViewCell.identifier, for: indexPath)
+                let instagramFeedPostHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostHeaderTableViewCell.identifier, for: indexPath) as! InstagramFeedPostHeaderTableViewCell
+                instagramFeedPostHeaderTableViewCell.configure(user: user)
+                instagramFeedPostHeaderTableViewCell.instagramFeedPostHeaderTableViewCellDelegate = self
                 
                 return instagramFeedPostHeaderTableViewCell
                 
@@ -109,8 +82,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             }
         } else if subSection == 1 {
             switch homeFeedRenderViewModel.post.postRenderType {
-            case .primaryContent(let post):
-                let instagramFeedPostTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostTableViewCell.identifier, for: indexPath)
+            case .primaryContent(let userPost):
+                let instagramFeedPostTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostTableViewCell.identifier, for: indexPath) as! InstagramFeedPostTableViewCell
+                instagramFeedPostTableViewCell.configure(userPost: userPost)
                 
                 return instagramFeedPostTableViewCell
                 
@@ -120,7 +94,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         } else if subSection == 2 {
             switch homeFeedRenderViewModel.actions.postRenderType {
             case .actions(let provider):
-                let instagramFeedPostActionsTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostActionsTableViewCell.identifier, for: indexPath)
+                let instagramFeedPostActionsTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostActionsTableViewCell.identifier, for: indexPath) as! InstagramFeedPostActionsTableViewCell
+                instagramFeedPostActionsTableViewCell.instagramFeedPostActionsTableViewCellDelegate = self
                 
                 return instagramFeedPostActionsTableViewCell
                 
@@ -130,7 +105,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             switch homeFeedRenderViewModel.comments.postRenderType {
             case .comments(let comments):
-                let instagramFeedPostGeneralTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostGeneralTableViewCell.identifier, for: indexPath)
+                let instagramFeedPostGeneralTableViewCell = tableView.dequeueReusableCell(withIdentifier: InstagramFeedPostGeneralTableViewCell.identifier, for: indexPath) as! InstagramFeedPostGeneralTableViewCell
                 
                 return instagramFeedPostGeneralTableViewCell
                 
@@ -150,5 +125,58 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return section % 4 == 3 ? 70 : 0
+    }
+}
+
+extension HomeViewController: InstagramFeedPostHeaderTableViewCellDelegate {
+    func didTapMoreButton() {
+        showActionSheetController(title: "Post Options", message: nil, alertActions: [UIAlertAction(title: "Report Post", style: .destructive, handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.reportPost()
+        }), UIAlertAction(title: "Cancel", style: .cancel, handler: nil)], viewController: self, sourceView: view)
+    }
+}
+
+extension HomeViewController: InstagramFeedPostActionsTableViewCellDelegate {
+    func didTapLikeButton() {
+    }
+    
+    func didTapCommentButton() {
+    }
+    
+    func didTapSendButton() {
+    }
+}
+
+private extension HomeViewController {
+    func setupUI() {
+        instagramFeedPostsTableViewConfiguration()
+    }
+    
+    func createMockData() {
+        var postComments = [PostComment]()
+        for i in 0..<4 {
+            postComments.append(PostComment(identifier: "\(i)", userName: "@john", text: "This is some sample text for this post", createdDate: Date(), likes: []))
+        }
+        for index in 0..<8 {
+            homeFeedRenderViewModels.append(HomeFeedRenderViewModel(header: PostRenderViewModel(postRenderType: .header(provider: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil))), post: PostRenderViewModel(postRenderType: .primaryContent(provider: UserPost(identifier: "", userPostType: .photo, thumbnailImageURL: URL(string: "https://www.google.com/")!, postURL: URL(string: "https://www.google.com/")!, caption: "", postLikes: [], postComments: [], createdDate: Date(), taggedUsers: [], owner: User(userName: "Joe", bio: "", name: (first: "Joe", last: "Abraham"), birthDate: Date(), gender: .male, userCounts: UserCount(followers: 4, following: 4, posts: 4), joinDate: Date(), profilePhotoURL: nil)))), actions: PostRenderViewModel(postRenderType: .actions(provider: "")), comments: PostRenderViewModel(postRenderType: .comments(comments: postComments))))
+        }
+    }
+    
+    func handleNotAuthenticated() {
+        if Auth.auth().currentUser == nil {
+            navigate(.init(pageType: .loginViewController, navigationStyle: .present(modalPresentationStyle: .overFullScreen, animated: true)))
+        }
+    }
+    
+    func instagramFeedPostsTableViewConfiguration() {
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostHeaderTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostHeaderTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostGeneralTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostGeneralTableViewCell.identifier)
+        instagramFeedPostsTableView.register(UINib(nibName: InstagramFeedPostActionsTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: InstagramFeedPostActionsTableViewCell.identifier)
+    }
+    
+    func reportPost() {
+        
     }
 }
